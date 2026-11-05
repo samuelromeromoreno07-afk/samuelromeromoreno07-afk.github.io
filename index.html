@@ -4,22 +4,62 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OpenDesk: Study Together</title>
-  <meta name="description" content="OpenDesk is a study app: focus sessions, streaks and study groups.">
+  <meta name="description" content="OpenDesk is a study app: focus sessions, streaks and study groups. Estudia en compañía con sesiones de foco, rachas y grupos.">
+  <meta name="theme-color" content="#0b2128">
   <style>
-    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #0b2128; color: #e8f1f3; font-family: system-ui, sans-serif; text-align: center; padding: 24px; }
-    h1 { font-size: 40px; margin: 0 0 8px; }
-    p { color: #8fb0ba; margin: 4px 0 24px; }
-    a { color: #e0a24a; margin: 0 10px; }
+    :root { --fondo: #0b2128; --sup: #12313a; --borde: #1d4452; --texto: #e8f1f3; --suave: #8fb0ba; --ambar: #e0a24a; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--fondo); color: var(--texto); font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height: 1.5; }
+    main { max-width: 960px; margin: 0 auto; padding: 56px 24px 32px; text-align: center; }
+    h1 { font-size: clamp(38px, 8vw, 64px); margin: 0 0 12px; letter-spacing: -1px; }
+    .lema { font-size: clamp(18px, 3vw, 22px); color: var(--suave); margin: 0 auto 36px; max-width: 560px; }
+    .animales { display: flex; justify-content: center; align-items: flex-end; gap: clamp(2px, 1.5vw, 14px); margin: 8px 0 40px; flex-wrap: wrap; }
+    .animales img { height: clamp(110px, 20vw, 190px); width: auto; animation: sube 3.6s ease-in-out infinite; }
+    .animales img:nth-child(2n) { animation-delay: .5s; }
+    .animales img:nth-child(3n) { animation-delay: 1.1s; }
+    @keyframes sube { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @media (prefers-reduced-motion: reduce) { .animales img { animation: none; } }
+    .tiendas { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 56px; }
+    .tienda { display: inline-flex; flex-direction: column; align-items: flex-start; min-width: 200px; padding: 12px 22px; border-radius: 14px; background: var(--ambar); color: #1a1206; text-decoration: none; font-weight: 700; font-size: 20px; line-height: 1.15; }
+    .tienda small { font-weight: 500; font-size: 12px; opacity: .8; }
+    .tienda:hover { filter: brightness(1.08); }
+    .datos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; text-align: left; margin-bottom: 56px; }
+    .dato { background: var(--sup); border: 1px solid var(--borde); border-radius: 16px; padding: 20px; }
+    .dato h2 { margin: 0 0 6px; font-size: 18px; }
+    .dato p { margin: 0; color: var(--suave); font-size: 15px; }
+    footer { padding: 24px; text-align: center; border-top: 1px solid var(--borde); color: var(--suave); font-size: 14px; }
+    footer a { color: var(--ambar); margin: 0 10px; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <main>
     <h1>OpenDesk</h1>
-    <p>Study together. / Estudia en compañía.</p>
-    <nav>
-      <a href="https://relieved-tiara-c66.notion.site/OpenDesk-Privacy-Policy-Pol-tica-de-privacidad-407bb6755f9a80b3978aee06eed902ed">Privacy / Privacidad</a>
-      <a href="https://relieved-tiara-c66.notion.site/OpenDesk-Terms-of-Service-Condiciones-del-servicio-407bb6755f9a8072a605fa23a7ec47a0">Terms / Condiciones</a>
-    </nav>
+    <p class="lema">Study together, one session at a time.<br>Estudia en compañía, sesión a sesión.</p>
+
+    <div class="animales" aria-hidden="true">
+      <img src="img/oso.png" alt="">
+      <img src="img/zorro.png" alt="">
+      <img src="img/buho.png" alt="">
+      <img src="img/capibara.png" alt="">
+      <img src="img/mapache.png" alt="">
+      <img src="img/burro.png" alt="">
+    </div>
+
+    <div class="tiendas">
+      <a class="tienda" href="https://apps.apple.com/app/id6830804257"><small>Download on the</small>App Store</a>
+      <a class="tienda" href="https://play.google.com/store/apps/details?id=com.opendeskstudy.app"><small>Get it on</small>Google Play</a>
+    </div>
+
+    <section class="datos">
+      <div class="dato"><h2>Focus sessions / Sesiones de foco</h2><p>Study without distractions and keep your streak going. · Estudia sin distracciones y mantén tu racha.</p></div>
+      <div class="dato"><h2>Study groups / Grupos de estudio</h2><p>See who is studying right now and cheer each other on. · Mira quién estudia ahora y animaos entre vosotros.</p></div>
+      <div class="dato"><h2>Your own pace / A tu ritmo</h2><p>Simple stats and rankings only inside your group. · Estadísticas simples y rankings solo dentro de tu grupo.</p></div>
+    </section>
   </main>
+  <footer>
+    <a href="https://relieved-tiara-c66.notion.site/OpenDesk-Privacy-Policy-Pol-tica-de-privacidad-407bb6755f9a80b3978aee06eed902ed">Privacy / Privacidad</a>
+    <a href="https://relieved-tiara-c66.notion.site/OpenDesk-Terms-of-Service-Condiciones-del-servicio-407bb6755f9a8072a605fa23a7ec47a0">Terms / Condiciones</a>
+  </footer>
 </body>
 </html>
