@@ -13,9 +13,10 @@
     main { max-width: 960px; margin: 0 auto; padding: 56px 24px 32px; text-align: center; }
     h1 { font-size: clamp(38px, 8vw, 64px); margin: 0 0 12px; letter-spacing: -1px; }
     .lema { font-size: clamp(18px, 3vw, 22px); color: var(--suave); margin: 0 auto 36px; max-width: 560px; }
-    .animales { display: flex; justify-content: center; align-items: flex-end; gap: clamp(2px, 1.5vw, 14px); margin: 8px 0 40px; flex-wrap: wrap; }
-    .animales img { height: clamp(110px, 20vw, 190px); width: auto; animation: sube 3.6s ease-in-out infinite; }
-    .animales img.burro { height: clamp(138px, 25vw, 238px); }   /* las orejas le quitan sitio al cuerpo: se agranda para que se vea igual de grande */
+    /* --u = alto en pantalla de una imagen de 360 px. Cada animal lleva su alto (--h), el hueco transparente bajo sus pies (--m) y un factor de escala (--k):
+       los pies de todos quedan en la misma linea, y el burro (--k 1.2) se agranda para que su cabeza SIN orejas llegue a la altura de la de los demas */
+    .animales { --u: clamp(110px, 20vw, 190px); display: flex; justify-content: center; align-items: flex-end; gap: clamp(2px, 1.5vw, 14px); margin: 8px 0 48px; flex-wrap: wrap; }
+    .animales img { height: calc(var(--u) * var(--h) / 360 * var(--k, 1)); margin-bottom: calc(var(--u) * var(--m) / -360 * var(--k, 1)); width: auto; animation: sube 3.6s ease-in-out infinite; }
     .animales img:nth-child(2n) { animation-delay: .5s; }
     .animales img:nth-child(3n) { animation-delay: 1.1s; }
     @keyframes sube { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
@@ -39,12 +40,12 @@
     <p class="lema">Study together, one session at a time.<br>Estudia en compañía, sesión a sesión.</p>
 
     <div class="animales" aria-hidden="true">
-      <img src="img/oso.png" alt="">
-      <img src="img/zorro.png" alt="">
-      <img src="img/buho.png" alt="">
-      <img src="img/capibara.png" alt="">
-      <img src="img/mapache.png" alt="">
-      <img class="burro" src="img/burro.png" alt="">
+      <img src="img/oso.png" alt="" style="--h:360;--m:10">
+      <img src="img/zorro.png" alt="" style="--h:360;--m:10">
+      <img src="img/buho.png" alt="" style="--h:325;--m:9">
+      <img src="img/capibara.png" alt="" style="--h:360;--m:11">
+      <img src="img/mapache.png" alt="" style="--h:345;--m:10">
+      <img src="img/burro.png" alt="" style="--h:360;--m:22;--k:1.2">
     </div>
 
     <div class="tiendas">
