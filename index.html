@@ -15,6 +15,7 @@
     .lema { font-size: clamp(18px, 3vw, 22px); color: var(--suave); margin: 0 auto 36px; max-width: 560px; }
     .animales { display: flex; justify-content: center; align-items: flex-end; gap: clamp(2px, 1.5vw, 14px); margin: 8px 0 40px; flex-wrap: wrap; }
     .animales img { height: clamp(110px, 20vw, 190px); width: auto; animation: sube 3.6s ease-in-out infinite; }
+    .animales img.burro { height: clamp(138px, 25vw, 238px); }   /* las orejas le quitan sitio al cuerpo: se agranda para que se vea igual de grande */
     .animales img:nth-child(2n) { animation-delay: .5s; }
     .animales img:nth-child(3n) { animation-delay: 1.1s; }
     @keyframes sube { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
@@ -43,7 +44,7 @@
       <img src="img/buho.png" alt="">
       <img src="img/capibara.png" alt="">
       <img src="img/mapache.png" alt="">
-      <img src="img/burro.png" alt="">
+      <img class="burro" src="img/burro.png" alt="">
     </div>
 
     <div class="tiendas">
